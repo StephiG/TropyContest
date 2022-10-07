@@ -24,8 +24,8 @@ struct RegionView: View {
                     if let team1 = team1,
                        let team2 = team2 {
                         VStack {
-                            TeamView(team: team1, fieldNumber: team1.seed)
-                            TeamView(team: team2, fieldNumber: team2.seed)
+                            TeamView(team: team1, fieldNumber: 1)
+                            TeamView(team: team2, fieldNumber: 2)
                         }
                     }
                  }
