@@ -22,7 +22,7 @@ struct TeamView: View {
                         .foregroundColor(.black)
                 
                     HStack() {
-                        Text(team.gettingTeamSeed())
+                        Text("\(team.seed)")
                         Spacer()
                         Text(team.name)
                             .scaledToFit()
@@ -65,7 +65,7 @@ struct TeamView: View {
                         .foregroundColor(.black)
                 
                     HStack() {
-                        Text(team.gettingTeamSeed())
+                        Text("\(team.seed)")
                         Spacer()
                         Text(team.name)
                             .scaledToFit()

@@ -14,13 +14,5 @@ struct Team: Codable, Equatable, Identifiable {
     var seed: Int
     var region: String
     var imageName: String
-    
-    func gettingTeamSeed() -> String {
-        if self.seed < 10 {
-            return " \(self.seed)"
-        } else {
-            return "\(self.seed)"
-        }
-    }
 }
 
