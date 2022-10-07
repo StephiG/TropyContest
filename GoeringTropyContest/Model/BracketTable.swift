@@ -44,7 +44,4 @@ struct BracketTable {
             break
         }
     }
-    
-    
-    
 }
