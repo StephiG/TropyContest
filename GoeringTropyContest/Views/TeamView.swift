@@ -10,7 +10,7 @@ import SwiftUI
 struct TeamView: View {
     
     @State var team: Team
-    var fieldNUmber: Int
+    var fieldNumber: Int
     
     var body: some View {
         HStack(){
@@ -37,7 +37,7 @@ struct TeamView: View {
                     .padding(5)
                     
                 }.frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10)
-                if fieldNUmber % 2 != 0 {
+                if fieldNumber % 2 != 0 {
                     MatchLineDownLeft()
                         .fill(.black)
                         .frame(width: UIScreen.screenWidth/2.5/3, height: UIScreen.screenHeight/9/2 + 10, alignment: .center)
@@ -48,7 +48,7 @@ struct TeamView: View {
                        
                 }
             } else {
-                if fieldNUmber % 2 != 0 {
+                if fieldNumber % 2 != 0 {
                     MatchLineDownRight()
                         .fill(.black)
                         .frame(width: UIScreen.screenWidth/2.5/3, height: UIScreen.screenHeight/9/2 + 10, alignment: .center)
@@ -154,6 +154,6 @@ struct MatchLineUpLeft: Shape {
 
 struct TeamView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamView(team: Team(name: "Gonzaga", seed: 1, region: "South", imageName: "2560px-Gonzaga_Bulldogs_wordmark.svg"), fieldNUmber: 1)
+        TeamView(team: Team(name: "Gonzaga", seed: 1, region: "South", imageName: "2560px-Gonzaga_Bulldogs_wordmark.svg"), fieldNumber: 1)
     }
 }

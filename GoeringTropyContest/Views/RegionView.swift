@@ -15,7 +15,7 @@ struct RegionView: View {
         ScrollView {
             VStack {
                 ForEach(region.teams) { team in
-                    TeamView(team: team, fieldNUmber: team.seed)
+                    TeamView(team: team, fieldNumber: team.seed)
                  }
              }
         }
