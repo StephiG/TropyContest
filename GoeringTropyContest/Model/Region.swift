@@ -11,6 +11,4 @@ struct Region: Codable, Equatable, Identifiable {
     var id = UUID()
     var teams: [Team]
     var name: String
-    
-    
 }
