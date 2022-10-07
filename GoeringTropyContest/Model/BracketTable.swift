@@ -9,10 +9,10 @@ import SwiftUI
 
 struct BracketTable {
     
-    var teamsInBracketRegionWest: [Int: Team?] = [:]
-    var teamsInBracketRegionEast: [Int: Team?] = [:]
-    var teamsInBracketRegionSouth: [Int: Team?] = [:]
-    var teamsInBracketRegionMidwest: [Int: Team?] = [:]
+    var teamsInBracketRegionWest: [Int: Team] = [:]
+    var teamsInBracketRegionEast: [Int: Team] = [:]
+    var teamsInBracketRegionSouth: [Int: Team] = [:]
+    var teamsInBracketRegionMidwest: [Int: Team] = [:]
     
     
     
@@ -21,7 +21,7 @@ struct BracketTable {
     let seedOrderRound64 = [1, 16, 8, 9, 5, 12, 4, 13, 6, 11, 3, 14, 7, 10, 2, 15]
     
     mutating func creatingRegionBracket(region: Region) {
-        var bracket: [Int: Team?] = [:]
+        var bracket: [Int:Team] = [:]
         for i in 0...15 {
             let team = region.teams.first(where:  { $0.seed == seedOrderRound64[i] })
             bracket[i+1] = team
