@@ -12,4 +12,5 @@ struct Region: Codable, Equatable, Identifiable {
     var teams: [Team]
     var name: String
     
+    
 }
