@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1660C07128F06709009A2E55 /* RoundPicks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1660C07028F06709009A2E55 /* RoundPicks.swift */; };
 		960ED0D028EDAB3D00D54465 /* GoeringTropyContestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED0CF28EDAB3D00D54465 /* GoeringTropyContestApp.swift */; };
 		960ED0D228EDAB3D00D54465 /* MatchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED0D128EDAB3D00D54465 /* MatchTableView.swift */; };
 		960ED0D428EDAB3E00D54465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960ED0D328EDAB3E00D54465 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1660C07028F06709009A2E55 /* RoundPicks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundPicks.swift; sourceTree = "<group>"; };
 		960ED0CC28EDAB3D00D54465 /* GoeringTropyContest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoeringTropyContest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		960ED0CF28EDAB3D00D54465 /* GoeringTropyContestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoeringTropyContestApp.swift; sourceTree = "<group>"; };
 		960ED0D128EDAB3D00D54465 /* MatchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				960ED0FD28EDACBC00D54465 /* Team.swift */,
 				960ED10528EDB77F00D54465 /* Region.swift */,
+				1660C07028F06709009A2E55 /* RoundPicks.swift */,
 				960ED0FF28EDACEC00D54465 /* ConstantsAndNumbers.swift */,
 				960ED10928EDBFFF00D54465 /* BracketTable.swift */,
 			);
@@ -299,6 +302,7 @@
 			files = (
 				960ED0FE28EDACBC00D54465 /* Team.swift in Sources */,
 				960ED10228EDAF9700D54465 /* Round64View.swift in Sources */,
+				1660C07128F06709009A2E55 /* RoundPicks.swift in Sources */,
 				960ED0D228EDAB3D00D54465 /* MatchTableView.swift in Sources */,
 				960ED10428EDB70C00D54465 /* RegionView.swift in Sources */,
 				960ED0D028EDAB3D00D54465 /* GoeringTropyContestApp.swift in Sources */,
