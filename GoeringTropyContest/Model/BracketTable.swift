@@ -13,11 +13,10 @@ struct BracketTable {
     var teamsInBracketRegionEast: [Int: Team] = [:]
     var teamsInBracketRegionSouth: [Int: Team] = [:]
     var teamsInBracketRegionMidwest: [Int: Team] = [:]
-    
-    
-    
+
     var finalTeams = [[1: nil], [2: nil], [3: nil], [4: nil], [5: nil], [6: nil], [7: nil]]
     
+    static let pairings: [(Int,Int)] = [(1,16), (8,9), (5,12), (4,13), (6,11), (3,14), (7,10), (2,15)]
     let seedOrderRound64 = [1, 16, 8, 9, 5, 12, 4, 13, 6, 11, 3, 14, 7, 10, 2, 15]
     
     mutating func creatingRegionBracket(region: Region) {

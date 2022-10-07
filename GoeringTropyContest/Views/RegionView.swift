@@ -14,12 +14,23 @@ struct RegionView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(region.teams) { team in
-                    TeamView(team: team, fieldNumber: team.seed)
+                ForEach(Array(BracketTable.pairings.enumerated()), id: \.offset) { index, pairing in
+                    let team1 = region.teams.first {
+                        $0.seed == pairing.0
+                    }
+                    let team2 = region.teams.first {
+                        $0.seed == pairing.1
+                    }
+                    if let team1 = team1,
+                       let team2 = team2 {
+                        VStack {
+                            TeamView(team: team1, fieldNumber: team1.seed)
+                            TeamView(team: team2, fieldNumber: team2.seed)
+                        }
+                    }
                  }
              }
         }
-        
     }
 }
 
