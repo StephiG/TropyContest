@@ -25,7 +25,13 @@ struct RegionView: View {
                        let team2 = team2 {
                         VStack {
                             TeamView(team: team1, fieldNumber: 1)
+                                .onTapGesture {
+                                    
+                                }
                             TeamView(team: team2, fieldNumber: 2)
+                                .onTapGesture {
+                                    
+                                }
                         }
                     }
                  }

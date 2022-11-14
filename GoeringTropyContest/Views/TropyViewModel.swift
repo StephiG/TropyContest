@@ -85,11 +85,21 @@ class TropyViewModel: ObservableObject {
         Team(name: "Jacksonville State", seed: 16, region: "MidWest", imageName: "Jacksonville_State_Gamecocks_logo.svg")], name: "MidWest")
     
     @Published var regions = [regionWest, regionEast, regionSouth, regionMidWest]
+
+    // region UUID mapped to array of roundpicks (0th is first round, 1th second etc)
+    @Published var picks:[UUID : [RoundPicks]] = [
+        regionWest.id : initializeEmptyRoundPicks(for: regionWest),
+        regionEast.id : initializeEmptyRoundPicks(for: regionEast),
+        regionSouth.id : initializeEmptyRoundPicks(for: regionSouth),
+        regionMidWest.id : initializeEmptyRoundPicks(for: regionMidWest)
+    ]
     
-    
-   
-    
-    
-   
-    
+    static func initializeEmptyRoundPicks(for region:Region) -> [RoundPicks] {
+        return [
+            RoundPicks(region: region, round: 0),
+            RoundPicks(region: region, round: 1),
+            RoundPicks(region: region, round: 2),
+            RoundPicks(region: region, round: 3)
+        ]
+    }
 }
