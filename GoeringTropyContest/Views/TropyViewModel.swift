@@ -94,6 +94,19 @@ class TropyViewModel: ObservableObject {
         regionMidWest.id : initializeEmptyRoundPicks(for: regionMidWest)
     ]
     
+    private static func sendDataToGoogleSheet() {
+        var url = URL(string: "https://docs.google.com/forms/u/0/d/e/blablabla/formResponse")
+        var postData = "entry.1938482540=HAHA"
+        postData += "&entry.1605530316=Option 1"
+
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.httpBody = postData.data(using: String.Encoding.utf8 )
+        var connection = NSURLConnection(request: request, delegate: nil, startImmediately: true)
+        connection?.start()
+    }
+    
     func teamArray(in region:Region, for round:Int) -> [(Team?,Team?)] {
         var result:[(Team?,Team?)] = []
         if let roundpicksArray = picks[region.id] {
