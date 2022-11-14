@@ -14,6 +14,7 @@ struct GoeringTropyContestApp: App {
     var body: some Scene {
         WindowGroup {
             MatchTableView(viewModel: season)
+                .environmentObject(season)
         }
     }
 }

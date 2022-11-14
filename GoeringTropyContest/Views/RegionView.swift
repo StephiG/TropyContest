@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RegionView: View {
     
+    @EnvironmentObject var model:TropyViewModel
+    
     let region: Region
     
     var body: some View {
@@ -26,11 +28,11 @@ struct RegionView: View {
                         VStack {
                             TeamView(team: team1, fieldNumber: 1)
                                 .onTapGesture {
-                                    
+                                    model.pick(winner:team1, for:region, in:index)
                                 }
                             TeamView(team: team2, fieldNumber: 2)
                                 .onTapGesture {
-                                    
+                                    model.pick(winner:team2, for:region, in:index)
                                 }
                         }
                     }
