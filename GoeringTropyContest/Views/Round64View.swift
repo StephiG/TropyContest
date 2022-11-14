@@ -14,7 +14,7 @@ struct Round64View: View {
     
     var body: some View {
         HStack{
-            VStack {
+            VStack { 
                 RegionRound1View(region: regionOne)
                 Rectangle()
                     .frame(width: UIScreen.screenWidth, height: 5.0, alignment: .leading)
