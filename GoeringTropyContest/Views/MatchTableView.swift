@@ -23,8 +23,9 @@ struct MatchTableView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let season = TropyViewModel()
     static var previews: some View {
-        let season = TropyViewModel()
         MatchTableView(viewModel: season)
+            .environmentObject(season)
     }
 }

@@ -94,6 +94,21 @@ class TropyViewModel: ObservableObject {
         regionMidWest.id : initializeEmptyRoundPicks(for: regionMidWest)
     ]
     
+    func teamArray(in region:Region, for round:Int) -> [(Team?,Team?)] {
+        var result:[(Team?,Team?)] = []
+        if let roundpicksArray = picks[region.id] {
+            let roundpicks = roundpicksArray[round-1]
+            let numberOfTeams = round == 1 ? 8 :
+                                round == 2 ? 4 : 2
+            for i in 0..<numberOfTeams/2 {
+                let team1 = roundpicks.picks[i*2]
+                let team2 = roundpicks.picks[i*2+1]
+                result.append((team1,team2))
+            }
+        }
+        return result
+    }
+    
     func pick(winner team:Team, for region:Region, in index:Int) -> Void {
         if let roundpicksArray:[RoundPicks] = self.picks[region.id] {
             let roundpicks = roundpicksArray[0]

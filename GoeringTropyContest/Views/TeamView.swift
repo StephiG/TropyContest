@@ -153,7 +153,9 @@ struct MatchLineUpLeft: Shape {
 
 
 struct TeamView_Previews: PreviewProvider {
+    static let season = TropyViewModel()
     static var previews: some View {
         TeamView(team: Team(name: "Gonzaga", seed: 1, region: "South", imageName: "2560px-Gonzaga_Bulldogs_wordmark.svg"), fieldNumber: 1)
+            .environmentObject(season)
     }
 }

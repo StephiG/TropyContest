@@ -15,13 +15,12 @@ struct Round64View: View {
     var body: some View {
         HStack{
             VStack {
-                RegionView(region: regionOne)
+                RegionRound1View(region: regionOne)
                 Rectangle()
                     .frame(width: UIScreen.screenWidth, height: 5.0, alignment: .leading)
                     .padding()
-                RegionView(region: regionTwo)
+                RegionRound1View(region: regionTwo)
             }
-            
         }
     }
 }
