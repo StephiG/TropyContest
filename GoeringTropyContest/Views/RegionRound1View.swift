@@ -17,10 +17,19 @@ struct RegionRound1View: View {
     
     var body: some View {
         
-        var teamsInRound = model.teamArray(in: region, for: 1)
-       
-        
-        ScrollView {
+        let teamsInRound = model.pairings["\(region.id)1"] ??
+        [
+            TeamPairing(id:UUID(), team1: nil, team2: nil),
+            TeamPairing(id:UUID(), team1: nil, team2: nil),
+            TeamPairing(id:UUID(), team1: nil, team2: nil),
+            TeamPairing(id:UUID(), team1: nil, team2: nil),
+            TeamPairing(id:UUID(), team1: nil, team2: nil),
+            TeamPairing(id:UUID(), team1: nil, team2: nil),
+            TeamPairing(id:UUID(), team1: nil, team2: nil),
+            TeamPairing(id:UUID(), team1: nil, team2: nil)
+        ]
+
+        return ScrollView {
             VStack(spacing: 0){
                 Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2/2 + 5, alignment: Alignment.center)
                 ForEach(Array(teamsInRound.enumerated()), id: \.offset) { index, pairing in

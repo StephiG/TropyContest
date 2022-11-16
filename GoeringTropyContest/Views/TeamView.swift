@@ -9,12 +9,13 @@ import SwiftUI
 
 struct TeamView: View {
     
-    @State var team: Team?
+    var team: Team?
     let region:Region
     var fieldNumber: Int
     
     var body: some View {
-        HStack(){
+        print("team \(team?.name ?? "unknown") for field \(fieldNumber)")
+        return HStack(){
             if region.name == "West" || region.name == "East" {
                 ZStack() {
                     let shape =  RoundedRectangle(cornerRadius: 10)
@@ -36,6 +37,8 @@ struct TeamView: View {
                                 .frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/3, alignment: Alignment.center)
                                 .scaledToFit()
                         }.padding(5)
+                    } else {
+                        Text("NULL")
                     }
                     
                     
