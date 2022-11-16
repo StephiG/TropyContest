@@ -19,11 +19,11 @@
 		960ED0FE28EDACBC00D54465 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED0FD28EDACBC00D54465 /* Team.swift */; };
 		960ED10028EDACEC00D54465 /* ConstantsAndNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED0FF28EDACEC00D54465 /* ConstantsAndNumbers.swift */; };
 		960ED10228EDAF9700D54465 /* Round64View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED10128EDAF9700D54465 /* Round64View.swift */; };
-		960ED10428EDB70C00D54465 /* RegionRound1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED10328EDB70C00D54465 /* RegionRound1View.swift */; };
+		960ED10428EDB70C00D54465 /* RegionRound0View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED10328EDB70C00D54465 /* RegionRound0View.swift */; };
 		960ED10628EDB77F00D54465 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED10528EDB77F00D54465 /* Region.swift */; };
 		960ED10828EDB84700D54465 /* TropyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED10728EDB84700D54465 /* TropyViewModel.swift */; };
 		960ED10A28EDBFFF00D54465 /* BracketTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED10928EDBFFF00D54465 /* BracketTable.swift */; };
-		961958A22925084F0001360E /* RegionRound2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961958A12925084F0001360E /* RegionRound2View.swift */; };
+		961958A22925084F0001360E /* RegionRound1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961958A12925084F0001360E /* RegionRound1View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,11 +59,11 @@
 		960ED0FD28EDACBC00D54465 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		960ED0FF28EDACEC00D54465 /* ConstantsAndNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsAndNumbers.swift; sourceTree = "<group>"; };
 		960ED10128EDAF9700D54465 /* Round64View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round64View.swift; sourceTree = "<group>"; };
-		960ED10328EDB70C00D54465 /* RegionRound1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionRound1View.swift; sourceTree = "<group>"; };
+		960ED10328EDB70C00D54465 /* RegionRound0View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionRound0View.swift; sourceTree = "<group>"; };
 		960ED10528EDB77F00D54465 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		960ED10728EDB84700D54465 /* TropyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TropyViewModel.swift; sourceTree = "<group>"; };
 		960ED10928EDBFFF00D54465 /* BracketTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketTable.swift; sourceTree = "<group>"; };
-		961958A12925084F0001360E /* RegionRound2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionRound2View.swift; sourceTree = "<group>"; };
+		961958A12925084F0001360E /* RegionRound1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionRound1View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +166,8 @@
 				960ED0D128EDAB3D00D54465 /* MatchTableView.swift */,
 				960ED10128EDAF9700D54465 /* Round64View.swift */,
 				960ED0FB28EDAC9500D54465 /* TeamView.swift */,
-				960ED10328EDB70C00D54465 /* RegionRound1View.swift */,
-				961958A12925084F0001360E /* RegionRound2View.swift */,
+				960ED10328EDB70C00D54465 /* RegionRound0View.swift */,
+				961958A12925084F0001360E /* RegionRound1View.swift */,
 				960ED10728EDB84700D54465 /* TropyViewModel.swift */,
 			);
 			path = Views;
@@ -307,9 +307,9 @@
 				960ED10228EDAF9700D54465 /* Round64View.swift in Sources */,
 				1660C07128F06709009A2E55 /* RoundPicks.swift in Sources */,
 				960ED0D228EDAB3D00D54465 /* MatchTableView.swift in Sources */,
-				960ED10428EDB70C00D54465 /* RegionRound1View.swift in Sources */,
+				960ED10428EDB70C00D54465 /* RegionRound0View.swift in Sources */,
 				960ED0D028EDAB3D00D54465 /* GoeringTropyContestApp.swift in Sources */,
-				961958A22925084F0001360E /* RegionRound2View.swift in Sources */,
+				961958A22925084F0001360E /* RegionRound1View.swift in Sources */,
 				960ED10028EDACEC00D54465 /* ConstantsAndNumbers.swift in Sources */,
 				960ED0FC28EDAC9500D54465 /* TeamView.swift in Sources */,
 				960ED10828EDB84700D54465 /* TropyViewModel.swift in Sources */,
