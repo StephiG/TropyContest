@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct TeamPairing: Identifiable {
+    var id = UUID()
+    var team1: Team?
+    var team2: Team?
+}
+
 class TropyViewModel: ObservableObject {
     
     //@Published var currentRegion = regions[0]
@@ -107,7 +113,7 @@ class TropyViewModel: ObservableObject {
         connection?.start()
     }
     
-    func teamArray(in region:Region, for round:Int) -> [(Team?,Team?)] {
+    func teamArray(in region:Region, for round:Int) -> [TeamPairing] {
         var result:[(Team?,Team?)] = []
         if let roundpicksArray = picks[region.id] {
             let roundpicks = roundpicksArray[round-1]
@@ -119,7 +125,7 @@ class TropyViewModel: ObservableObject {
                 result.append((team1,team2))
             }
         }
-        return result
+        return result.map({TeamPairing.init(team1:$0.0, team2:$0.1)})
     }
     
     func pick(winner team:Team, for region:Region, in index:Int) -> Void {

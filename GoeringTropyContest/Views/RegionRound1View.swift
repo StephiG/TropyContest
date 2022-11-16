@@ -26,11 +26,11 @@ struct RegionRound1View: View {
                     if let team1 = team1,
                        let team2 = team2 {
                         VStack {
-                            TeamView(team: team1, fieldNumber: 1)
+                            TeamView(team: team1, region:region, fieldNumber: 1)
                                 .onTapGesture {
                                     model.pick(winner:team1, for:region, in:index)
                                 }
-                            TeamView(team: team2, fieldNumber: 2)
+                            TeamView(team: team2, region:region, fieldNumber: 2)
                                 .onTapGesture {
                                     model.pick(winner:team2, for:region, in:index)
                                 }
@@ -42,7 +42,7 @@ struct RegionRound1View: View {
     }
 }
 
-struct RegionView_Previews: PreviewProvider {
+struct  RegionRound1View_Previews: PreviewProvider {
     static let season = TropyViewModel()
     static var previews: some View {
         RegionRound1View(region: season.regions[0])
