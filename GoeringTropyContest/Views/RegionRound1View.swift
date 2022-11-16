@@ -38,10 +38,17 @@ struct RegionRound1View: View {
                     let team2 = pairing.team2
                     
                     VStack(spacing: 0) {
+                        HStack (spacing: 0) {
+                            MatchLineStraight().fill()
+                            TeamView(team: team1, region:region, fieldNumber: 1)
+                        }
                        
-                        TeamView(team: team1, region:region, fieldNumber: 1)
                         Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
-                        TeamView(team: team2, region:region, fieldNumber: 2)
+                        HStack(spacing: 0) {
+                            MatchLineStraight().fill()
+                            TeamView(team: team2, region:region, fieldNumber: 2)
+                        }
+                        
                         Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
                                 
                     }
@@ -53,6 +60,19 @@ struct RegionRound1View: View {
         }.padding(0)
     }
 
+}
+
+struct MatchLineStraight: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+
+        path.move(to: CGPoint(x: rect.minX, y: rect.midY-2.5))
+        path.addLine(to: CGPoint(x: rect.maxX, y:  rect.midY-2.5))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY+2.5))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.midY+2.5))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.midY-2.5))
+        return path
+    }
 }
 
 struct RegionRound1View_Previews: PreviewProvider {
