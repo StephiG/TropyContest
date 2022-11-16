@@ -41,12 +41,14 @@ struct RegionRound1View: View {
                         HStack (spacing: 0) {
                             MatchLineStraight().fill()
                             TeamView(team: team1, region:region, fieldNumber: 1)
+                                .padding(.leading, 5.0)
                         }
                        
                         Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
                         HStack(spacing: 0) {
                             MatchLineStraight().fill()
                             TeamView(team: team2, region:region, fieldNumber: 2)
+                                .padding(.leading, 5.0)
                         }
                         
                         Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
