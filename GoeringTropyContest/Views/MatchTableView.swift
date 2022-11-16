@@ -13,8 +13,9 @@ struct MatchTableView: View {
     
     var body: some View {
         ScrollView([.horizontal, .vertical]) {
-            HStack {
+            HStack (spacing: 0){
                 Round64View(regionOne: viewModel.regions[0], regionTwo: viewModel.regions[1])
+                RegionRound1View(region: viewModel.regions[0])
                 Round64View(regionOne: viewModel.regions[2], regionTwo: viewModel.regions[3])
             }
             

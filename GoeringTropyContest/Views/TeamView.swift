@@ -87,7 +87,7 @@ struct TeamView: View {
                 }.frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10)
             }
 
-        }
+        }.padding(.all, 0)
     }
 }
 

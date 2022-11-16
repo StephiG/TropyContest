@@ -113,6 +113,8 @@ class TropyViewModel: ObservableObject {
         connection?.start()
     }
     
+    @Published var pairings:[String:[TeamPairing]] = [:] // region+round is the key
+    
     func teamArray(in region:Region, for round:Int) -> [TeamPairing] {
         var result:[(Team?,Team?)] = []
         if let roundpicksArray = picks[region.id] {
@@ -128,11 +130,12 @@ class TropyViewModel: ObservableObject {
         return result.map({TeamPairing.init(team1:$0.0, team2:$0.1)})
     }
     
-    func pick(winner team:Team, for region:Region, in index:Int) -> Void {
+    func pick(winner team:Team, for region:Region, round:Int,  in index:Int) -> Void {
         if let roundpicksArray:[RoundPicks] = self.picks[region.id] {
-            let roundpicks = roundpicksArray[0]
+            let roundpicks = roundpicksArray[round]
             roundpicks.picks[index] = team
             print("picked \(team.name) for region \(region.name) for round #1 in game #\(index+1)")
+            pairings["\(region.id)\(1)"] = teamArray(in: region, for: round)
         }
     }
     

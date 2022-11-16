@@ -13,34 +13,40 @@ struct RegionRound1View: View {
     
     let region: Region
     
+   
+    
     var body: some View {
         
-        let teamsInRound = model.teamArray(in: region, for: 1)
+        var teamsInRound = model.teamArray(in: region, for: 1)
        
         
         ScrollView {
-            VStack {
+            VStack(spacing: 0){
+                Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2/2 + 5, alignment: Alignment.center)
                 ForEach(Array(teamsInRound.enumerated()), id: \.offset) { index, pairing in
                     
                     let team1 = pairing.team1
                     let team2 = pairing.team2
                     
-                    VStack {
-                            TeamView(team: team1, region:region, fieldNumber: 1)
-                               
-                            TeamView(team: team2, region:region, fieldNumber: 2)
+                    VStack(spacing: 0) {
+                       
+                        TeamView(team: team1, region:region, fieldNumber: 1)
+                        Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
+                        TeamView(team: team2, region:region, fieldNumber: 2)
+                        Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
                                 
                     }
                     
 
                  }
+                Rectangle().foregroundColor(.white).frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/2/2 + 5, alignment: Alignment.center)
              }
-        }
+        }.padding(0)
     }
 
 }
 
-struct RegionRound2View_Previews: PreviewProvider {
+struct RegionRound1View_Previews: PreviewProvider {
     static let season = TropyViewModel()
         static var previews: some View {
             RegionRound1View(region: season.regions[0])
