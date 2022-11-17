@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegionRound1View: View {
+struct RegionRound0View: View {
     
     @EnvironmentObject var model:TropyViewModel
     
@@ -15,7 +15,7 @@ struct RegionRound1View: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(spacing: 0){
                 ForEach(Array(BracketTable.pairings.enumerated()), id: \.offset) { index, pairing in
                     let team1 = region.teams.first {
                         $0.seed == pairing.0
@@ -25,27 +25,28 @@ struct RegionRound1View: View {
                     }
                     if let team1 = team1,
                        let team2 = team2 {
-                        VStack {
-                            TeamView(team: team1, fieldNumber: 1)
+                        VStack(spacing: 0) {
+                            TeamView(team: team1, region:region, fieldNumber: 1)
                                 .onTapGesture {
-                                    model.pick(winner:team1, for:region, in:index)
-                                }
-                            TeamView(team: team2, fieldNumber: 2)
+                                    model.pick(winner:team1, for:region, round: 0,  in:index)
+                                }.padding(0)
+                            TeamView(team: team2, region:region, fieldNumber: 2)
                                 .onTapGesture {
-                                    model.pick(winner:team2, for:region, in:index)
-                                }
-                        }
+                                    model.pick(winner:team2, for:region, round: 0, in:index)
+                                }.padding(0)
+                        }.padding(0)
                     }
                  }
-             }
+             }.padding(0)
         }
+        .padding(0.0)
     }
 }
 
-struct RegionView_Previews: PreviewProvider {
+struct  RegionRound0View_Previews: PreviewProvider {
     static let season = TropyViewModel()
     static var previews: some View {
-        RegionRound1View(region: season.regions[0])
+        RegionRound0View(region: season.regions[0])
             .environmentObject(season)
     }
 }

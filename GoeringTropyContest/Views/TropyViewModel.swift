@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct TeamPairing: Identifiable {
+    var id = UUID()
+    var team1: Team?
+    var team2: Team?
+}
+
 class TropyViewModel: ObservableObject {
     
     //@Published var currentRegion = regions[0]
@@ -107,9 +113,13 @@ class TropyViewModel: ObservableObject {
         connection?.start()
     }
     
-    func teamArray(in region:Region, for round:Int) -> [(Team?,Team?)] {
+    @Published var pairings:[String:[TeamPairing]] = [:] // region+round is the key
+    
+    // this will only be for rounds 1 and above
+    func teamArray(in region:Region, for round:Int) -> [TeamPairing] {
         var result:[(Team?,Team?)] = []
         if let roundpicksArray = picks[region.id] {
+            // get picks of PREVIOUS round (-1)
             let roundpicks = roundpicksArray[round-1]
             let numberOfTeams = round == 1 ? 8 :
                                 round == 2 ? 4 : 2
@@ -119,14 +129,17 @@ class TropyViewModel: ObservableObject {
                 result.append((team1,team2))
             }
         }
-        return result
+        return result.map({TeamPairing.init(team1:$0.0, team2:$0.1)})
     }
     
-    func pick(winner team:Team, for region:Region, in index:Int) -> Void {
+    // Round 0: the very first round (32 games)
+    // Round 1: the second round, etc.
+    func pick(winner team:Team, for region:Region, round:Int,  in index:Int) -> Void {
         if let roundpicksArray:[RoundPicks] = self.picks[region.id] {
-            let roundpicks = roundpicksArray[0]
+            let roundpicks = roundpicksArray[round]
             roundpicks.picks[index] = team
-            print("picked \(team.name) for region \(region.name) for round #1 in game #\(index+1)")
+            print("picked \(team.name) for region \(region.name) for round #\(round) in game #\(index+1)")
+            pairings["\(region.id)\(round+1)"] = teamArray(in: region, for: round+1)
         }
     }
     

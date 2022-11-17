@@ -9,32 +9,38 @@ import SwiftUI
 
 struct TeamView: View {
     
-    @State var team: Team
+    var team: Team?
+    let region:Region
     var fieldNumber: Int
     
     var body: some View {
-        HStack(){
-            if team.region == "West" || team.region == "East" {
+        print("team \(team?.name ?? "unknown") for field \(fieldNumber)")
+        return HStack(){
+            if region.name == "West" || region.name == "East" {
                 ZStack() {
                     let shape =  RoundedRectangle(cornerRadius: 10)
                     shape.fill(Color.white)
                     shape.strokeBorder(lineWidth: 3)
                         .foregroundColor(.black)
-                
-                    HStack() {
-                        Text("\(team.seed)")
-                        Spacer()
-                        Text(team.name)
-                            .scaledToFit()
-                            .minimumScaleFactor(0.5)
-                            .lineLimit(1)
-                        Spacer()
-                        Image(uiImage: UIImage(named: team.imageName)!)
-                            .resizable()
-                            .frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/3, alignment: Alignment.center)
-                            .scaledToFit()
+                    
+                    if (team != nil) {
+                        HStack() {
+                            Text("\(team!.seed)")
+                            Spacer()
+                            Text(team!.name)
+                                .scaledToFit()
+                                .minimumScaleFactor(0.5)
+                                .lineLimit(1)
+                            Spacer()
+                            Image(uiImage: UIImage(named: team!.imageName)!)
+                                .resizable()
+                                .frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/3, alignment: Alignment.center)
+                                .scaledToFit()
+                        }.padding(5)
+                    } else {
+                        Text("NULL")
                     }
-                    .padding(5)
+                    
                     
                 }.frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10)
                 if fieldNumber % 2 != 0 {
@@ -56,33 +62,35 @@ struct TeamView: View {
                     MatchLineUpRight()
                         .fill(.black)
                         .frame(width: UIScreen.screenWidth/2.5/3, height: UIScreen.screenHeight/9/2 + 10, alignment: .center)
-                       
                 }
+                
                 ZStack() {
                     let shape =  RoundedRectangle(cornerRadius: 10)
                     shape.fill(Color.white)
                     shape.strokeBorder(lineWidth: 3)
                         .foregroundColor(.black)
-                
-                    HStack() {
-                        Text("\(team.seed)")
-                        Spacer()
-                        Text(team.name)
-                            .scaledToFit()
-                            .minimumScaleFactor(0.5)
-                            .lineLimit(1)
-                        Spacer()
-                        Image(uiImage: UIImage(named: team.imageName)!)
-                            .resizable()
-                            .frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/3, alignment: Alignment.center)
-                            .scaledToFit()
+                    if (team != nil) {
+                        HStack() {
+                            Text("\(team!.seed)")
+                            Spacer()
+                            Text(team!.name)
+                                .scaledToFit()
+                                .minimumScaleFactor(0.5)
+                                .lineLimit(1)
+                            Spacer()
+                            Image(uiImage: UIImage(named: team!.imageName)!)
+                                .resizable()
+                                .frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/3, alignment: Alignment.center)
+                                .scaledToFit()
+                        }
+                        .padding(5)
                     }
-                    .padding(5)
+                    
                     
                 }.frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10)
             }
 
-        }
+        }.padding(.all, 0)
     }
 }
 
@@ -155,7 +163,7 @@ struct MatchLineUpLeft: Shape {
 struct TeamView_Previews: PreviewProvider {
     static let season = TropyViewModel()
     static var previews: some View {
-        TeamView(team: Team(name: "Gonzaga", seed: 1, region: "South", imageName: "2560px-Gonzaga_Bulldogs_wordmark.svg"), fieldNumber: 1)
+        TeamView(team: Team(name: "Gonzaga", seed: 1, region: "South", imageName: "2560px-Gonzaga_Bulldogs_wordmark.svg"), region:season.regions[2], fieldNumber: 1)
             .environmentObject(season)
     }
 }
