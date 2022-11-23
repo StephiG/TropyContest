@@ -23,11 +23,9 @@ struct RegionRound1View: View {
             TeamPairing(id:UUID(), team1: nil, team2: nil),
             TeamPairing(id:UUID(), team1: nil, team2: nil),
             TeamPairing(id:UUID(), team1: nil, team2: nil),
-            TeamPairing(id:UUID(), team1: nil, team2: nil),
-            TeamPairing(id:UUID(), team1: nil, team2: nil),
-            TeamPairing(id:UUID(), team1: nil, team2: nil),
-            TeamPairing(id:UUID(), team1: nil, team2: nil)
+            
         ]
+        print(teamsInRound.count)
 
         return ScrollView {
             VStack(spacing: 0){
@@ -38,21 +36,39 @@ struct RegionRound1View: View {
                     let team2 = pairing.team2
                     
                     VStack(spacing: 0) {
-                        HStack (spacing: 0) {
-                            MatchLineStraight().fill()
-                            TeamView(team: team1, region:region, fieldNumber: 1)
-                                .padding(.leading, 5.0)
+                        if region.name == "West" || region.name == "East" {
+                            HStack (spacing: 0) {
+                                MatchLineStraight().fill()
+                                TeamView(team: team1, region:region, fieldNumber: 1)
+                                    .padding(.leading, 5.0)
+                            }
+                           
+                            Rectangle().foregroundColor(.white).frame(height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center)
+                                .padding(.trailing, 5).background(.black)
+                            HStack(spacing: 0) {
+                                MatchLineStraight().fill()
+                                TeamView(team: team2, region:region, fieldNumber: 2)
+                                    .padding(.leading, 5.0)
+                            }
+                            
+                            Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
+                        } else {
+                            HStack (spacing: 0) {
+                                TeamView(team: team1, region:region, fieldNumber: 1)
+                                    .padding(.trailing, 5.0)
+                                MatchLineStraight().fill()
+                            }
+                           
+                            Rectangle().foregroundColor(.white).frame(height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.leading)
+                                .padding(.leading, 5).background(.black)
+                            HStack(spacing: 0) {
+                                TeamView(team: team2, region:region, fieldNumber: 2)
+                                    .padding(.trailing, 5.0)
+                                MatchLineStraight().fill()
+                            }
+                            
+                            Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
                         }
-                       
-                        Rectangle().foregroundColor(.white).frame(height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center)
-                            .padding(.trailing, 5).background(.black)
-                        HStack(spacing: 0) {
-                            MatchLineStraight().fill()
-                            TeamView(team: team2, region:region, fieldNumber: 2)
-                                .padding(.leading, 5.0)
-                        }
-                        
-                        Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
                                 
                     }
                     
@@ -81,7 +97,7 @@ struct MatchLineStraight: Shape {
 struct RegionRound1View_Previews: PreviewProvider {
     static let season = TropyViewModel()
         static var previews: some View {
-            RegionRound1View(region: season.regions[0])
+            RegionRound1View(region: season.regions[2])
                 .environmentObject(season)
         }
 }

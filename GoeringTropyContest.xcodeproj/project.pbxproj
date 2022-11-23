@@ -24,6 +24,7 @@
 		960ED10828EDB84700D54465 /* TropyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED10728EDB84700D54465 /* TropyViewModel.swift */; };
 		960ED10A28EDBFFF00D54465 /* BracketTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960ED10928EDBFFF00D54465 /* BracketTable.swift */; };
 		961958A22925084F0001360E /* RegionRound1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961958A12925084F0001360E /* RegionRound1View.swift */; };
+		961958A4292E6D200001360E /* Round32View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961958A3292E6D200001360E /* Round32View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		960ED10728EDB84700D54465 /* TropyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TropyViewModel.swift; sourceTree = "<group>"; };
 		960ED10928EDBFFF00D54465 /* BracketTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketTable.swift; sourceTree = "<group>"; };
 		961958A12925084F0001360E /* RegionRound1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionRound1View.swift; sourceTree = "<group>"; };
+		961958A3292E6D200001360E /* Round32View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round32View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			children = (
 				960ED0D128EDAB3D00D54465 /* MatchTableView.swift */,
 				960ED10128EDAF9700D54465 /* Round64View.swift */,
+				961958A3292E6D200001360E /* Round32View.swift */,
 				960ED0FB28EDAC9500D54465 /* TeamView.swift */,
 				960ED10328EDB70C00D54465 /* RegionRound0View.swift */,
 				961958A12925084F0001360E /* RegionRound1View.swift */,
@@ -312,6 +315,7 @@
 				961958A22925084F0001360E /* RegionRound1View.swift in Sources */,
 				960ED10028EDACEC00D54465 /* ConstantsAndNumbers.swift in Sources */,
 				960ED0FC28EDAC9500D54465 /* TeamView.swift in Sources */,
+				961958A4292E6D200001360E /* Round32View.swift in Sources */,
 				960ED10828EDB84700D54465 /* TropyViewModel.swift in Sources */,
 				960ED10628EDB77F00D54465 /* Region.swift in Sources */,
 				960ED10A28EDBFFF00D54465 /* BracketTable.swift in Sources */,

@@ -14,8 +14,8 @@ struct TeamView: View {
     var fieldNumber: Int
     
     var body: some View {
-        print("team \(team?.name ?? "unknown") for field \(fieldNumber)")
-        return HStack(){
+        
+        HStack(){
             if region.name == "West" || region.name == "East" {
                 ZStack() {
                     let shape =  RoundedRectangle(cornerRadius: 10)
