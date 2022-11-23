@@ -37,8 +37,7 @@ struct TeamView: View {
                                 .frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/3, alignment: Alignment.center)
                                 .scaledToFit()
                         }.padding(5)
-                    } else {
-                        Text("NULL")
+                   
                     }
                     
                     
