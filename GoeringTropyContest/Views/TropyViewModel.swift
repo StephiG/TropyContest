@@ -138,7 +138,6 @@ class TropyViewModel: ObservableObject {
         if let roundpicksArray:[RoundPicks] = self.picks[region.id] {
             let roundpicks = roundpicksArray[round]
             roundpicks.picks[index] = team
-            print("picked \(team.name) for region \(region.name) for round #\(round) in game #\(index+1)")
             pairings["\(region.id)\(round+1)"] = teamArray(in: region, for: round+1)
         }
     }

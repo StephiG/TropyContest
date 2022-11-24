@@ -41,6 +41,11 @@ struct RegionRound1View: View {
                                 MatchLineStraight().fill()
                                 TeamView(team: team1, region:region, fieldNumber: 1)
                                     .padding(.leading, 5.0)
+                                    .onTapGesture {
+                                        if (team1 != nil) {
+                                            model.pick(winner:team1!, for:region, round: 1,  in:index)
+                                        }
+                                    }
                             }
                            
                             Rectangle().foregroundColor(.white).frame(height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center)
@@ -49,6 +54,11 @@ struct RegionRound1View: View {
                                 MatchLineStraight().fill()
                                 TeamView(team: team2, region:region, fieldNumber: 2)
                                     .padding(.leading, 5.0)
+                                    .onTapGesture {
+                                        if (team2 != nil) {
+                                            model.pick(winner:team2!, for:region, round: 1,  in:index)
+                                        }
+                                    }
                             }
                             
                             Rectangle().foregroundColor(.white).frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10, alignment: Alignment.center).padding(0)
@@ -56,6 +66,11 @@ struct RegionRound1View: View {
                             HStack (spacing: 0) {
                                 TeamView(team: team1, region:region, fieldNumber: 1)
                                     .padding(.trailing, 5.0)
+                                    .onTapGesture {
+                                        if (team1 != nil) {
+                                            model.pick(winner:team1!, for:region, round: 1,  in:index)
+                                        }
+                                    }
                                 MatchLineStraight().fill()
                             }
                            
@@ -64,6 +79,11 @@ struct RegionRound1View: View {
                             HStack(spacing: 0) {
                                 TeamView(team: team2, region:region, fieldNumber: 2)
                                     .padding(.trailing, 5.0)
+                                    .onTapGesture {
+                                        if (team2 != nil) {
+                                            model.pick(winner:team2!, for:region, round: 1,  in:index)
+                                        }
+                                    }
                                 MatchLineStraight().fill()
                             }
                             
