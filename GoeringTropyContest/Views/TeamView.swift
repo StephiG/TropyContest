@@ -15,7 +15,7 @@ struct TeamView: View {
     
     var body: some View {
         
-        HStack(){
+        HStack(spacing: 0){
             if region.name == "West" || region.name == "East" {
                 ZStack() {
                     let shape =  RoundedRectangle(cornerRadius: 10)

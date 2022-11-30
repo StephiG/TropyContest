@@ -37,7 +37,7 @@ struct RegionRound0View: View {
                         }.padding(0)
                     }
                  }
-             }.padding(0)
+            }.padding(.trailing, 0)
         }
         .padding(0.0)
     }

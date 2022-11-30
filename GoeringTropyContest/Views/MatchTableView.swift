@@ -16,7 +16,8 @@ struct MatchTableView: View {
             HStack(spacing: 0){
                 Round64View(regionOne: viewModel.regions[0], regionTwo: viewModel.regions[1])
                 Round32View(regionOne: viewModel.regions[0], regionTwo: viewModel.regions[1])
-                Spacer()
+                Round16View(regionOne: viewModel.regions[0], regionTwo: viewModel.regions[1])
+                Round16View(regionOne: viewModel.regions[2], regionTwo: viewModel.regions[3])
                 Round32View(regionOne: viewModel.regions[2], regionTwo: viewModel.regions[3])
                 Round64View(regionOne: viewModel.regions[2], regionTwo: viewModel.regions[3])
             }
