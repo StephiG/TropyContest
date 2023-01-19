@@ -100,6 +100,10 @@ class TropyViewModel: ObservableObject {
         regionMidWest.id : initializeEmptyRoundPicks(for: regionMidWest)
     ]
     
+    @Published var finalPickLeft: Team?
+    @Published var finalPickChamp: Team?
+    @Published var finalPickRight: Team?
+    
     private static func sendDataToGoogleSheet() {
         var url = URL(string: "https://docs.google.com/forms/u/0/d/e/blablabla/formResponse")
         var postData = "entry.1938482540=HAHA"
@@ -141,13 +145,25 @@ class TropyViewModel: ObservableObject {
             pairings["\(region.id)\(round+1)"] = teamArray(in: region, for: round+1)
         }
     }
+    func pickFinal3(winner team:Team, side: String) -> Void {
+        switch side {
+        case "left":
+            finalPickLeft = team
+        case "right":
+            finalPickRight = team
+        case "champ":
+            finalPickChamp = team
+        default: break
+        }
+    }
     
     static func initializeEmptyRoundPicks(for region:Region) -> [RoundPicks] {
         return [
             RoundPicks(region: region, round: 0),
             RoundPicks(region: region, round: 1),
             RoundPicks(region: region, round: 2),
-            RoundPicks(region: region, round: 3)
+            RoundPicks(region: region, round: 3),
+            RoundPicks(region: region, round: 4)
         ]
     }
 }

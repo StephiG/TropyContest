@@ -34,33 +34,33 @@ struct TeamView: View {
                             Spacer()
                             Image(uiImage: UIImage(named: team!.imageName)!)
                                 .resizable()
-                                .frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/3, alignment: Alignment.center)
+                                .frame(width: UIScreen.teamViewWidth/4, height: UIScreen.teamViewWidth/4, alignment: Alignment.center)
                                 .scaledToFit()
                         }.padding(5)
                    
                     }
                     
                     
-                }.frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10)
+                }.frame(width: UIScreen.teamViewWidth , height: UIScreen.teamViewHeight + 10)
                 if fieldNumber % 2 != 0 {
                     MatchLineDownLeft()
                         .fill(.black)
-                        .frame(width: UIScreen.screenWidth/2.5/3, height: UIScreen.screenHeight/9/2 + 10, alignment: .center)
+                        .frame(width: UIScreen.teamViewWidth/3, height: UIScreen.teamViewHeight + 10, alignment: .center)
                 } else {
                     MatchLineUpLeft()
                         .fill(.black)
-                        .frame(width: UIScreen.screenWidth/2.5/3, height: UIScreen.screenHeight/9/2 + 10, alignment: .center)
+                        .frame(width: UIScreen.teamViewWidth/3, height: UIScreen.teamViewHeight + 10, alignment: .center)
                        
                 }
             } else {
                 if fieldNumber % 2 != 0 {
                     MatchLineDownRight()
                         .fill(.black)
-                        .frame(width: UIScreen.screenWidth/2.5/3, height: UIScreen.screenHeight/9/2 + 10, alignment: .center)
+                        .frame(width: UIScreen.teamViewWidth/3, height: UIScreen.teamViewHeight + 10, alignment: .center)
                 } else {
                     MatchLineUpRight()
                         .fill(.black)
-                        .frame(width: UIScreen.screenWidth/2.5/3, height: UIScreen.screenHeight/9/2 + 10, alignment: .center)
+                        .frame(width: UIScreen.teamViewWidth/3, height: UIScreen.teamViewHeight + 10, alignment: .center)
                 }
                 
                 ZStack() {
@@ -79,14 +79,14 @@ struct TeamView: View {
                             Spacer()
                             Image(uiImage: UIImage(named: team!.imageName)!)
                                 .resizable()
-                                .frame(width: (UIScreen.screenHeight/9)/3, height: (UIScreen.screenHeight/9)/3, alignment: Alignment.center)
+                                .frame(width: UIScreen.teamViewWidth/4, height: UIScreen.teamViewWidth/4, alignment: Alignment.center)
                                 .scaledToFit()
                         }
                         .padding(5)
                     }
                     
                     
-                }.frame(width: UIScreen.screenWidth/2.5, height: UIScreen.screenHeight/9/2 + 10)
+                }.frame(width: UIScreen.teamViewWidth, height: UIScreen.teamViewHeight + 10, alignment: .center)
             }
 
         }.padding(.all, 0)
