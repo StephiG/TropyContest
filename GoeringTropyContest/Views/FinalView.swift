@@ -37,7 +37,6 @@ struct FinalView: View {
                             MatchLineStraight().fill().frame(width: UIScreen.teamViewHeight/4)
                             TeamView(team: teamRegionOne, region:regionOne, fieldNumber: 1)
                                 .onTapGesture {
-                                    print("hello")
                                     if (teamRegionOne != nil) {
                                         model.pickFinal3(winner: teamRegionOne!, side: "left" )
                                     }
@@ -53,7 +52,6 @@ struct FinalView: View {
                             MatchLineStraight().fill().frame(width: UIScreen.teamViewHeight/4)
                             TeamView(team: teamRegionTwo, region:regionTwo, fieldNumber: 2)
                                 .onTapGesture {
-                                    print("hihi")
                                     if (teamRegionTwo != nil) {
                                         model.pickFinal3(winner: teamRegionTwo!, side: "left" )
                                     }
